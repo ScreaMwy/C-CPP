@@ -9,11 +9,14 @@
 >提交追加後的文件<
 	git commit -m [註釋]    ##提交.
 
->遠程追加一個源<
+>遠程追加一個遠程源<
 	git remote add [任意名] [git中的ssh連接url]   ##追加源
 
+>如果遠程源存在，則進行刪除操作<
+	git remote rm/remove [已存在的遠程源]
+
 >提交文件<
-	git push -u [被追加的源] [master分支]    ##提交到代碼管理雲上
+	git push -u [被追加的遠程源] [master分支]    ##提交到代碼管理雲上
 
 
 
