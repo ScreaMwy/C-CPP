@@ -1,0 +1,19 @@
+<Linux的操作日誌>
+	Linux的隱藏文件的格式：".filename" (注意：filename前面有一個".")
+
+
+<Linux-application桌面快捷方式的創建>
+	文件格式："ApplicationName.desktop"
+
+	必要參數說明：
+		[Desktop Entry]
+		Type：類型(Application)
+		Name：名稱
+		Icon：圖標的絕對路徑
+		Exec：可執行文件的絕對路徑
+		Comment：對應用程序的描述
+		Categories:應用程序的分類，(開發軟件:Development;IDE;)
+		Terminal:應用程序實行時是否啓動終端
+
+
+		

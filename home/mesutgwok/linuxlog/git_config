@@ -1,0 +1,27 @@
+#Git在Linux中的使用方法#
+
+>創建本地倉庫<
+	git init    ##(默認的倉庫路徑爲：/.git).
+
+>追加新文件/修改後的文件<
+	git add [文件所在路徑]    ##文件被加載到緩存中.
+	
+>提交追加後的文件<
+	git commit -m [註釋]    ##提交.
+
+>遠程追加一個源<
+	git remote add [任意名] [git中的ssh連接url]   ##追加源
+
+>提交文件<
+	git push -u [被追加的源] [master分支]    ##提交到代碼管理雲上
+
+
+
+
+#在Linux中創建SSH的密钥
+
+>創建本地密钥<
+	ssh-keygen [github中的註冊email]
+
+>測試與github的ssh鏈接<
+	ssh -T git@github.com
