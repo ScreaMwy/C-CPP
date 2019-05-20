@@ -1,23 +1,25 @@
 #include "../include/ArrayList.h"
 
-template<typename T> 
-ArrayList<T>::ArrayList() {
-	this->A(ArrayList::DEFAULT_CAPACITY);
-}
 
-template<typename T> 
+template<typename T>
 ArrayList<T>::ArrayList(int capacity) {
-	this->data = (T*) malloc(capacity * sizeof(T*));
+	this->data = (T*) malloc(sizeof(T) * capacity);
+	//this->data = new T[capacity];
 	this->length = capacity;
 	this->size = 0;
 }
 
-template<typename T> 
+template<typename T>
+ArrayList<T>::ArrayList() {
+	ArrayList(ArrayList::DEFAULT_CAPACITY);
+}
+
+template<typename T>
 ArrayList<T>::~ArrayList() {
 	free(this->data);
 }
 
-template<typename T> 
+template<typename T>
 void ArrayList<T>::add(T e) {
 	if (this->size == this->length) {
 		this->data = (T*) realloc(this->data, 1.5 * length * sizeof(T*));
@@ -26,11 +28,12 @@ void ArrayList<T>::add(T e) {
 	size++;
 }
 
-template<typename T> 
+template<typename T>
 char* ArrayList<T>::toString() {
 	char* str = NULL;
 	for (int i = 0; i < this->size; i++) {
-		str + i = (char*) (this->data + i);
+		str += i;
+		str = (char*) (this->data + i);
 	}
 	return str;
 }
@@ -38,7 +41,7 @@ char* ArrayList<T>::toString() {
 template<typename T>
 void ArrayList<T>::display() {
 	if (NULL == this->data) {
-		printf("NULL"); 
+		printf("NULL");
 	}
 
 	if (0 == this->size) {
@@ -47,11 +50,11 @@ void ArrayList<T>::display() {
 
 	int max = this->size - 1;
 	char* str = toString();
-	printf('[');
+	printf("[");
 	for (int i = 0; ; i++) {
 		printf("%s", *(str + i));
 		if (max == i) {
-			printf(']');
+			printf("]");
 		}
 		printf(", ");
 	}
