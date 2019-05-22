@@ -11,7 +11,10 @@ ArrayList<T>::ArrayList(int capacity) {
 
 template<typename T>
 ArrayList<T>::ArrayList() {
-	ArrayList(ArrayList::DEFAULT_CAPACITY);
+	this->data = (T*) malloc(sizeof(T) * ArrayList::DEFAULT_CAPACITY);
+	//this->data = new T[capacity];
+	this->length = ArrayList::DEFAULT_CAPACITY;
+	this->size = 0;
 }
 
 template<typename T>
@@ -22,7 +25,7 @@ ArrayList<T>::~ArrayList() {
 template<typename T>
 void ArrayList<T>::add(T e) {
 	if (this->size == this->length) {
-		this->data = (T*) realloc(this->data, 1.5 * length * sizeof(T*));
+		this->data = (T*) realloc(this->data, 1.5 * this->length * sizeof(T*));
 	}
 	*(data + size) = e;
 	size++;
@@ -32,8 +35,7 @@ template<typename T>
 char* ArrayList<T>::toString() {
 	char* str = NULL;
 	for (int i = 0; i < this->size; i++) {
-		str += i;
-		str = (char*) (this->data + i);
+		
 	}
 	return str;
 }
